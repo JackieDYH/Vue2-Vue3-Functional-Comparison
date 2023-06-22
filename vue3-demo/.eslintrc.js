@@ -1,12 +1,3 @@
-/*
- * @Author: Jackie
- * @Date: 2023-06-22 11:18:32
- * @LastEditTime: 2023-06-22 11:23:30
- * @LastEditors: Jackie
- * @Description: file content
- * @FilePath: /Vue2-Vue3-Functional-Comparison/vue3-demo/.eslintrc.js
- * @version: 
- */
 module.exports = {
   root: true,
   env: {
