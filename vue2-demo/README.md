@@ -1,5 +1,10 @@
 # vue2-demo
 
+```
+1、组件间通信
+2、store多种方式使用
+```
+
 ## Project setup
 ```
 npm install
