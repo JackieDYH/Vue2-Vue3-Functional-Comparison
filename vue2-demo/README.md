@@ -5,6 +5,40 @@
 2、store多种方式使用
 ```
 
+```js
+import { mapState, mapGetters, mapActions, mapMutations} from 'vuex'
+export default {
+  ...
+  computed:{
+  	...mapState(['useInfo']),
+  	//以下是带命名空间的
+  	//...mapState('user',['useInfo']),
+  	//...mapState({
+	//  userInfo: (sate) => state.user.userInfo
+	//}),
+  	...mapGetters(['getUserInfo']),
+  	//以下是带命名空间的
+  	//...mapGetters(['getUserInfo'])
+  	//...mapGetters({
+	//   userInfo: "user/getUserInfo"
+	//})
+  },
+  methods:{
+    ...mapActions(['setUserInfo']),
+    //以下是带命名空间的
+    //...mapActions({
+	//  setUserInfo: 'user/setUserInfo'
+    //})
+    ...mapActions(['setUserInfo']),
+    //以下是带命名空间的
+    //...mapMutations({
+	//  setUserInfo: 'user/setUserInfo'
+    //})
+  }
+  ...
+}
+```
+
 ## Project setup
 ```
 npm install

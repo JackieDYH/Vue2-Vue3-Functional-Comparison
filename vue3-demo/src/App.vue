@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">组件通信</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">srote</router-link>
   </nav>
   <router-view />
 </template>

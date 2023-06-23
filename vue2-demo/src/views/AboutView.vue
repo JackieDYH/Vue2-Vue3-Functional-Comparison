@@ -1,10 +1,10 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-22 11:38:10
- * @LastEditTime: 2023-06-22 14:30:27
+ * @LastEditTime: 2023-06-23 17:02:48
  * @LastEditors: Jackie
  * @Description: file content
- * @FilePath: /vue2-demo/src/views/AboutView.vue
+ * @FilePath: /Vue2-Vue3-Functional-Comparison/vue2-demo/src/views/AboutView.vue
  * @version: 
 -->
 <template>
@@ -74,3 +74,36 @@ export default {
   height: 1000px;
 }
 </style>
+
+
+<!-- import { mapState, mapGetters, mapActions, mapMutations} from 'vuex'
+export default {
+  ...
+  computed:{
+  	...mapState(['useInfo']),
+  	//以下是带命名空间的
+  	//...mapState('user',['useInfo']),
+  	//...mapState({
+	//  userInfo: (sate) => state.user.userInfo
+	//}),
+  	...mapGetters(['getUserInfo']),
+  	//以下是带命名空间的
+  	//...mapGetters(['getUserInfo'])
+  	//...mapGetters({
+	//   userInfo: "user/getUserInfo"
+	//})
+  },
+  methods:{
+    ...mapActions(['setUserInfo']),
+    //以下是带命名空间的
+    //...mapActions({
+	//  setUserInfo: 'user/setUserInfo'
+    //})
+    ...mapActions(['setUserInfo']),
+    //以下是带命名空间的
+    //...mapMutations({
+	//  setUserInfo: 'user/setUserInfo'
+    //})
+  }
+  ...
+} -->
