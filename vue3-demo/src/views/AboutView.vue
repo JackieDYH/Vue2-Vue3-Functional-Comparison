@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-22 11:39:03
- * @LastEditTime: 2023-06-23 17:15:20
+ * @LastEditTime: 2023-06-25 10:04:20
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo/src/views/AboutView.vue
@@ -62,6 +62,8 @@ const name12 = computed(() => store.state.name12);
 const isLogin1 = computed(() => store.state.isLogin1);
 const num1 = computed(() => store.state.num1);
 let getNum1 = computed(() => store.getters.getNum1);
+// 返回的是一个ref 需要.value
+console.log('主store',name1.value,isLogin1.value,getNum1.value);
 const ck = () => {
   store.commit("setIsLogin1", !store.state.isLogin1);
 };
