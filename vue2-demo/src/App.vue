@@ -1,8 +1,18 @@
+<!--
+ * @Author: Jackie
+ * @Date: 2023-06-25 09:58:10
+ * @LastEditTime: 2023-06-26 09:52:28
+ * @LastEditors: Jackie
+ * @Description: file content
+ * @FilePath: /vue2-demo/src/App.vue
+ * @version: 
+-->
 <template>
   <div id="app">
     <nav>
       <router-link to="/">组件通信</router-link> |
-      <router-link to="/about">store</router-link>
+      <router-link to="/about">store</router-link> |
+      <router-link to="/code">code</router-link>
     </nav>
     <router-view />
   </div>

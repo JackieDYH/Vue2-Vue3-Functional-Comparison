@@ -1,3 +1,12 @@
+/*
+ * @Author: Jackie
+ * @Date: 2023-06-25 09:58:10
+ * @LastEditTime: 2023-06-26 09:51:51
+ * @LastEditors: Jackie
+ * @Description: file content
+ * @FilePath: /vue2-demo/src/router/index.js
+ * @version: 
+ */
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
@@ -18,6 +27,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  },
+  {
+    path: "/code",
+    name: "code",
+    component: () =>import("../views/CodeInput.vue"),
   },
 ];
 
