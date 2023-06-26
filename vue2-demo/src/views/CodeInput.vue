@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-26 09:50:08
- * @LastEditTime: 2023-06-26 10:07:12
+ * @LastEditTime: 2023-06-26 10:31:42
  * @LastEditors: Jackie
  * @Description: 验证吗输入框
  * @FilePath: /vue2-demo/src/views/CodeInput.vue
