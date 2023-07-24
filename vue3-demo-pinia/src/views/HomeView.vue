@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 16:57:40
+ * @LastEditTime: 2023-07-24 17:14:53
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo-pinia/src/views/HomeView.vue
@@ -12,7 +12,7 @@
     <h1>This is an home page</h1>
     <p>{{ store.count }}</p>
     <p>{{ count }}</p>
-    <p>Double count is {{ store.double }}</p>
+    <p>Double count is {{ store.double }}-{{ store.userNum }}</p>
     <p>{{ store }}</p>
     <!-- <p>{{ store.increment }}</p>
     <p>{{ increment }}</p> -->
@@ -21,11 +21,12 @@
     <p>
       {{ name }}-{{ age }}-{{ num }}-{{ userStore.fullName() }}-{{
         userStore.Age
-      }}
+      }}-{{ userStore.userCount }}
     </p>
     <button @click="userStore.setName('dyh')">setName</button>
     <button @click="userStore.setAge(1)">setAge</button>
     <button @click="userStore.addNum()">addNum</button>
+    <p>{{ userStore }}</p>
   </div>
 </template>
 
@@ -41,5 +42,6 @@ const { count } = storeToRefs(store);
 const { name, age, num } = storeToRefs(userStore);
 onMounted(() => {
   console.log(count);
+  console.log(name.value, age.value, num.value);
 });
 </script>

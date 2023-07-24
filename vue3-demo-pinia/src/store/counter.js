@@ -1,13 +1,16 @@
 /*
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 13:52:33
+ * @LastEditTime: 2023-07-24 17:11:07
  * @LastEditors: Jackie
  * @Description: pinia
  * @FilePath: /vue3-demo-pinia/src/store/counter.js
  * @version:
  */
-import { defineStore } from 'pinia';
+import { defineStore, storeToRefs } from 'pinia';
+
+// 访问user store中数据
+import { useUserStore } from './user';
 
 // 你可以对 `defineStore()` 的返回值进行任意命名，但最好使用 store 的名字，同时以 `use` 开头且以 `Store` 结尾。(比如 `useUserStore`，`useCartStore`，`useProductStore`)
 // 第一个参数是你的应用中 Store 的唯一 ID。
@@ -15,7 +18,13 @@ import { defineStore } from 'pinia';
 export const useCounterStore = defineStore('counter', {
   state: () => ({ count: 0 }),
   getters: {
-    double: (state) => state.count * 2
+    double: (state) => state.count * 2,
+    userNum: () => {
+      // 获取counter store中数据
+      const userSrote = useUserStore();
+      const { num } = storeToRefs(userSrote);
+      return num.value + '个';
+    }
   },
   actions: {
     increment() {
@@ -29,7 +38,7 @@ export const useCounterStore = defineStore('counter', {
     // strategies: [ //自定义key和存储方式
     //   {
     //     key: 'indexStore',
-    //     storage: localStorage
+    //     storage: localStorage //可以选择对应的存储形式（localStorage或者sessionStroage）
     //   }
     // ]
   }
