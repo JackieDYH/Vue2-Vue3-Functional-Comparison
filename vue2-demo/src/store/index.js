@@ -1,14 +1,16 @@
 /*
  * @Author: Jackie
  * @Date: 2023-06-22 11:38:10
- * @LastEditTime: 2023-06-22 13:37:36
+ * @LastEditTime: 2023-07-24 11:29:32
  * @LastEditors: Jackie
  * @Description: 状态管理
  * @FilePath: /vue2-demo/src/store/index.js
- * @version: 
+ * @version:
  */
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
+// 数据持久化
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
@@ -51,11 +53,12 @@ export default new Vuex.Store({
   //     }, 1000);
   //   }
   // },
-  state,//初始状态
-  mutations,//自定义方法 同步操作
-  actions,//调用mutations方法 异步
-  getters,//计算属性
+  state, //初始状态
+  mutations, //自定义方法 同步操作
+  actions, //调用mutations方法 异步
+  getters, //计算属性
+  plugins: [createPersistedState({ storage: window.sessionStorage })], //默认 {storage: window.localStorage}
   modules: {
     user
-  },
+  }
 });
