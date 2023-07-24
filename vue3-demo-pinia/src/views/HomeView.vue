@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 13:43:34
+ * @LastEditTime: 2023-07-24 16:57:40
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo-pinia/src/views/HomeView.vue
@@ -17,6 +17,15 @@
     <!-- <p>{{ store.increment }}</p>
     <p>{{ increment }}</p> -->
     <button @click="store.increment">store.Increment</button>
+    <hr />
+    <p>
+      {{ name }}-{{ age }}-{{ num }}-{{ userStore.fullName() }}-{{
+        userStore.Age
+      }}
+    </p>
+    <button @click="userStore.setName('dyh')">setName</button>
+    <button @click="userStore.setAge(1)">setAge</button>
+    <button @click="userStore.addNum()">addNum</button>
   </div>
 </template>
 
@@ -24,9 +33,12 @@
 import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '@/store/counter';
+import { useUserStore } from '@/store/user';
 const store = useCounterStore();
+const userStore = useUserStore();
 // const { count } = store; //失去了响应式
 const { count } = storeToRefs(store);
+const { name, age, num } = storeToRefs(userStore);
 onMounted(() => {
   console.log(count);
 });
