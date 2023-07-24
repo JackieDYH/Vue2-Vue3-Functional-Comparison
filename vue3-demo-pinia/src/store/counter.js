@@ -1,7 +1,7 @@
 /*
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 17:11:07
+ * @LastEditTime: 2023-07-24 17:32:25
  * @LastEditors: Jackie
  * @Description: pinia
  * @FilePath: /vue3-demo-pinia/src/store/counter.js
@@ -16,7 +16,7 @@ import { useUserStore } from './user';
 // 第一个参数是你的应用中 Store 的唯一 ID。
 // export const useCounterStore = defineStore({id:'counter', state:()=> ({ count: 0 })},...)
 export const useCounterStore = defineStore('counter', {
-  state: () => ({ count: 0 }),
+  state: () => ({ count: 0, name: 'jackie' }),
   getters: {
     double: (state) => state.count * 2,
     userNum: () => {
