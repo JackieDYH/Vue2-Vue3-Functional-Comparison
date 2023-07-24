@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 11:21:07
+ * @LastEditTime: 2023-07-24 13:43:34
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo-pinia/src/views/HomeView.vue
@@ -21,8 +21,13 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '@/store/counter';
 const store = useCounterStore();
+// const { count } = store; //失去了响应式
 const { count } = storeToRefs(store);
+onMounted(() => {
+  console.log(count);
+});
 </script>
