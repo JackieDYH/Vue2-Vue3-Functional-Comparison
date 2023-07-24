@@ -1,5 +1,10 @@
 # vue3-demo-pinia
 
+```
+npm install pinia
+npm i pinia-plugin-persist //数据持久化
+```
+
 ## Project setup
 
 ```
