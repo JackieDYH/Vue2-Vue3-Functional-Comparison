@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-26 10:14:23
- * @LastEditTime: 2023-06-26 10:57:56
+ * @LastEditTime: 2023-08-02 14:33:13
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo/src/components/code/CodeInput.vue
@@ -78,15 +78,15 @@ import {
   ref,
   nextTick,
   watch,
-  computed,
-} from "vue";
+  computed
+} from 'vue';
 const internalInstance = getCurrentInstance();
 
 defineProps({
-  isShowSecuityDia: Boolean,
+  isShowSecuityDia: Boolean
 });
 
-let nums = reactive(["", "", "", "", "", ""]);
+let nums = reactive(['', '', '', '', '', '']);
 // const currentInput = ref(0);
 // const input0 = ref(null);
 // const input1 = ref(null);
@@ -141,7 +141,7 @@ const onKeyDown = (index, e) => {
     case 8: // backspace键
       e.preventDefault();
       if (nums[index]) {
-        nums[index] = "";
+        nums[index] = '';
         if (index > 0) {
           activeIndex = index - 1;
           const prevInput = internalInstance.ctx.$refs[`input${index - 1}`];
@@ -183,7 +183,7 @@ const onFocus = (index) => {
 
 // 把六个数字拼接成一个变量
 const code = computed(() => {
-  return nums.join("");
+  return nums.join('');
 });
 // console.log(code);
 </script>
@@ -199,6 +199,7 @@ const code = computed(() => {
     border: 1px solid #d9d9d9;
     border-radius: 12px;
     font-size: 40px;
+    text-align: center;
     // caret-color: rgba(0, 0, 0, 0);
   }
 }
