@@ -1,10 +1,10 @@
 /*
  * @Author: Jackie
  * @Date: 2023-08-07 19:49:20
- * @LastEditTime: 2023-08-08 11:09:56
+ * @LastEditTime: 2023-08-08 11:22:43
  * @LastEditors: Jackie
  * @Description: pinia 处理js文件使用报错问题
- * @FilePath: /vue3-demo-pinia/src/store/store.js
+ * @FilePath: /vue3-demo-pinia/src/store/index.js
  * @version:
  */
 import { createPinia } from 'pinia';

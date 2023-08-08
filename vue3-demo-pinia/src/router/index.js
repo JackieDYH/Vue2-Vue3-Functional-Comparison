@@ -1,7 +1,7 @@
 /*
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-08-07 20:28:58
+ * @LastEditTime: 2023-08-08 11:23:12
  * @LastEditors: Jackie
  * @Description: router
  * @FilePath: /vue3-demo-pinia/src/router/index.js
@@ -9,11 +9,11 @@
  */
 import { createRouter, createWebHistory } from 'vue-router';
 // js文件使用报错处理
-import pinia from '@/store/store';
-import { useUserStore } from '@/store/user.js';
-const store = useUserStore(pinia);
+// import pinia from '@/store';
+// import { useUserStore } from '@/store/user.js';
+// const store = useUserStore(pinia);
 // 可以使用store
-console.log('router', store, store.num, store.Age);
+// console.log('router', store, store.num, store.Age);
 
 import HomeView from '../views/HomeView.vue';
 
