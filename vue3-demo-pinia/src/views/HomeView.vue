@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 17:39:12
+ * @LastEditTime: 2023-08-08 11:04:27
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo-pinia/src/views/HomeView.vue
@@ -10,13 +10,13 @@
 <template>
   <div class="home">
     <h1>This is an home page</h1>
-    <p>{{ store.count }}</p>
+    <p>{{ counterStore.count }}--{{ count }}</p>
     <p>{{ count }}</p>
-    <p>Double count is {{ store.double }}-{{ store.userNum }}</p>
-    <p>{{ store }}</p>
-    <!-- <p>{{ store.increment }}</p>
+    <p>Double count is {{ counterStore.double }}-{{ counterStore.userNum }}</p>
+    <p>{{ counterStore }}</p>
+    <!-- <p>{{ counterStore.increment }}</p>
     <p>{{ increment }}</p> -->
-    <button @click="store.increment">store.Increment</button>
+    <button @click="counterStore.increment">counterStore.Increment</button>
     <hr />
     <p>
       {{ name }}-{{ age }}-{{ num }}-{{ userStore.fullName() }}-{{
@@ -37,19 +37,18 @@ import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '@/store/counter';
 import { useUserStore } from '@/store/user';
-const store = useCounterStore();
+const counterStore = useCounterStore();
 const userStore = useUserStore();
-// const { count } = store; //失去了响应式
-const { count } = storeToRefs(store);
+// const { count } = counterStore; //失去了响应式
+const { count } = storeToRefs(counterStore);
 const { name, age, num } = storeToRefs(userStore);
-
 // 批量设置
 const setName = () => {
-  store.$patch({ name: 'dyh', count: 1000 });
+  counterStore.$patch({ name: 'dyh', count: 1000 });
   userStore.$patch({ name: 'dyh', age: 1000 });
 };
 const reset = () => {
-  store.$reset();
+  counterStore.$reset();
   userStore.$reset(); //默认setup语法不支持 在main.js中进行配置
 };
 onMounted(() => {

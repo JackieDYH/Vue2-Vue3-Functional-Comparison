@@ -1,7 +1,7 @@
 /*
  * @Author: Jackie
  * @Date: 2023-08-07 19:49:20
- * @LastEditTime: 2023-08-07 21:37:54
+ * @LastEditTime: 2023-08-08 11:09:56
  * @LastEditors: Jackie
  * @Description: pinia 处理js文件使用报错问题
  * @FilePath: /vue3-demo-pinia/src/store/store.js
