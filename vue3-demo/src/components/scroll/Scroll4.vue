@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-08-10 20:00:34
- * @LastEditTime: 2023-08-10 20:16:04
+ * @LastEditTime: 2023-08-10 20:45:49
  * @LastEditors: Jackie
  * @Description: scroll滚动-自动滚动组件
  * @FilePath: /vue3-demo/src/components/scroll/Scroll4.vue
@@ -38,9 +38,17 @@ const playAnimate = () => {
       scrollLeftEnd.value = false;
     }
     if (scrollLeftEnd.value) {
-      scroller.value.scrollLeft -= 1;
+      scroller.value.scrollTo({
+        top: 0,
+        left: (scroller.value.scrollLeft -= 1),
+        behavior: 'smooth'
+      }); //scrollLeft -= 1;
     } else {
-      scroller.value.scrollLeft += 1;
+      scroller.value.scrollTo({
+        top: 0,
+        left: (scroller.value.scrollLeft += 1),
+        behavior: 'smooth'
+      }); //scrollLeft += 1;
     }
   }, 33);
 };
