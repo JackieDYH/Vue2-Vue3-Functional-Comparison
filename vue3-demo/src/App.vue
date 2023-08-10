@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-06-26 10:21:19
+ * @LastEditTime: 2023-08-10 18:13:06
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo/src/App.vue
@@ -11,7 +11,8 @@
   <nav>
     <router-link to="/">组件通信</router-link> |
     <router-link to="/about">srote</router-link> |
-    <router-link to="/code">code</router-link>
+    <router-link to="/code">code</router-link> |
+    <router-link to="/scroll">scroll</router-link> |
   </nav>
   <router-view />
 </template>
