@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-08-24 14:18:05
- * @LastEditTime: 2023-09-11 14:58:21
+ * @LastEditTime: 2023-09-11 17:37:42
  * @LastEditors: Jackie
  * @Description: code输入框 - 可以使用
  * @FilePath: /vue3-demo/src/components/code/CodeInput4.vue
@@ -80,3 +80,12 @@ const handleKeyDown = (index, event) => {
   // box-shadow: 0 0 5px #007bff;
 }
 </style>
+
+<!-- 使用
+<CodeInput @emailCode="emailCodeFun" />
+
+const emailCodeFun = (val) => {
+  console.log(val);
+  emailCode.value = val;
+};
+-->
