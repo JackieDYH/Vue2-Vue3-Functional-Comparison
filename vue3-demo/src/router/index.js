@@ -25,6 +25,11 @@ const routes = [
     path: '/scroll',
     name: 'scroll',
     component: () => import('../views/ScrollView.vue')
+  },
+  {
+    path: '/draggable',
+    name: 'draggable',
+    component: () => import('../views/Draggable.vue')
   }
 ];
 

@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-08-10 18:13:06
+ * @LastEditTime: 2023-09-11 17:41:13
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-demo/src/App.vue
@@ -13,6 +13,7 @@
     <router-link to="/about">srote</router-link> |
     <router-link to="/code">code</router-link> |
     <router-link to="/scroll">scroll</router-link> |
+    <router-link to="/draggable">draggable</router-link> |
   </nav>
   <router-view />
 </template>
