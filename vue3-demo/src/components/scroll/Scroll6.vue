@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-09-15 16:57:38
- * @LastEditTime: 2023-09-15 18:25:37
+ * @LastEditTime: 2023-09-15 18:39:01
  * @LastEditors: Jackie
  * @Description: 点击滑动 - 未调试 - 暂存
  * @FilePath: /vue3-demo/src/components/scroll/Scroll6.vue
@@ -62,7 +62,23 @@ const onPageRight = () => {
 // 通过这种方式，具有 active 类的元素将在滚动容器的视口内展示出来。
 // const activeChange = (item, index) => {
 //   item.isActive = true;
-//   const activeElement = currencyItemsRef.value.querySelector('.slide-row.active');
+//   //   获取到最新dom
+//   nextTick(() => {
+//     const activeElement =
+//       currencyItemsRef.value.querySelector('.slide-row.active');
+//     console.log('activeElement', activeElement);
+// 元素居中
+//     if (activeElement) {
+//       activeElement.scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'nearest',
+//         inline: 'center'
+//       });
+//     }
+//   });
+//   // 只能获取上一次dom
+//   const activeElement =
+//     currencyItemsRef.value.querySelector('.slide-row.active');
 //   if (activeElement) {
 //     activeElement.scrollIntoView({
 //       behavior: 'smooth',
