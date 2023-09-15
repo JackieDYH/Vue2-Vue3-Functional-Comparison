@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-09-15 16:57:38
- * @LastEditTime: 2023-09-15 17:18:31
+ * @LastEditTime: 2023-09-15 17:33:04
  * @LastEditors: Jackie
  * @Description: 点击滑动 - 未调试 - 暂存
  * @FilePath: /vue3-demo/src/components/scroll/Scroll6.vue
@@ -10,7 +10,11 @@
 <template>
   <div class="SlideSwitch">
     <div class="sbtn">
-      <img src="@/assets/images/prices/zuo.svg" @click="onPageLeft" />
+      <img
+        src="@/assets/images/prices/zuo.svg"
+        @click="onPageLeft"
+        v-show="showLeftArrow"
+      />
     </div>
     <div class="slide-content" ref="currencyItemsRef">
       <div class="slide-box">
@@ -31,14 +35,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
+import { ref, computed, onMounted } from 'vue';
 const currencyItemsRef = ref(null);
+const showLeftArrow = ref(false);
+
 const onPageLeft = () => {
   currencyItemsRef.value.scroll({
     left: (currencyItemsRef.value.scrollLeft -= 250),
     behavior: 'smooth'
   });
+  if (currencyItemsRef.value.scrollLeft < 250) {
+    showLeftArrow.value = false;
+  }
 };
 
 const onPageRight = () => {
@@ -46,6 +54,7 @@ const onPageRight = () => {
     left: (currencyItemsRef.value.scrollLeft += 250),
     behavior: 'smooth'
   });
+  showLeftArrow.value = true;
 };
 
 // const onPageLeft = () => {
