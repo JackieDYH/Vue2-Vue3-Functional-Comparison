@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-09-15 16:57:38
- * @LastEditTime: 2023-09-15 17:33:04
+ * @LastEditTime: 2023-09-15 18:25:37
  * @LastEditors: Jackie
  * @Description: 点击滑动 - 未调试 - 暂存
  * @FilePath: /vue3-demo/src/components/scroll/Scroll6.vue
@@ -56,6 +56,21 @@ const onPageRight = () => {
   });
   showLeftArrow.value = true;
 };
+
+// 示例中，我们在 activeChange 方法中使用 querySelector 方法来获取具有 active 类的元素。然后，我们使用 scrollIntoView() 方法将该元素滚动到滚动容器的视口内。通过设置 behavior 为 'smooth'，滚动将以平滑的动画效果进行。block 和 inline 属性用于确定元素在视口中的位置，我们使用 'nearest' 和 'center' 将元素居中显示在视口中。
+// 请确保在更改 isActive 属性之前将其设置为 true，以确保正确滚动到具有 active 类的元素。
+// 通过这种方式，具有 active 类的元素将在滚动容器的视口内展示出来。
+// const activeChange = (item, index) => {
+//   item.isActive = true;
+//   const activeElement = currencyItemsRef.value.querySelector('.slide-row.active');
+//   if (activeElement) {
+//     activeElement.scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'nearest',
+//       inline: 'center'
+//     });
+//   }
+// };
 
 // const onPageLeft = () => {
 //   currencyItemsRef.value.scroll({
