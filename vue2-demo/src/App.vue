@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-06-26 09:52:28
+ * @LastEditTime: 2023-12-22 13:56:59
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue2-demo/src/App.vue
@@ -12,7 +12,8 @@
     <nav>
       <router-link to="/">组件通信</router-link> |
       <router-link to="/about">store</router-link> |
-      <router-link to="/code">code</router-link>
+      <router-link to="/code">code</router-link> |
+      <router-link to="/data">data</router-link>
     </nav>
     <router-view />
   </div>
