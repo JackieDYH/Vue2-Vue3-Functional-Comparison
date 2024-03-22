@@ -1,7 +1,7 @@
 /*
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-24 17:32:25
+ * @LastEditTime: 2024-03-22 15:39:54
  * @LastEditors: Jackie
  * @Description: pinia
  * @FilePath: /vue3-demo-pinia/src/store/counter.js
@@ -31,6 +31,7 @@ export const useCounterStore = defineStore('counter', {
       this.count++;
     }
   },
+  // 数据持久化piniaPluginPersist
   persist: {
     enabled: true, // 开启缓存  默认会存储在本地localstorage
     storage: sessionStorage, // 缓存使用方式
@@ -42,6 +43,13 @@ export const useCounterStore = defineStore('counter', {
     //   }
     // ]
   }
+
+  // 数据持久化piniaPluginPersistedstate
+  // persist: true
+  // persist: {
+  //   key: 'indexStore',
+  //   storage: localStorage
+  // }
 });
 
 // 你可以认为 state 是 store 的数据 (data)，getters 是 store 的计算属性 (computed)，而 actions 则是方法 (methods)。

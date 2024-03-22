@@ -3,6 +3,7 @@
 ```
 npm install pinia
 npm i pinia-plugin-persist //数据持久化
+npm i pinia-plugin-persistedstate //数据持久化 2
 ```
 
 ## Project setup

@@ -1,7 +1,7 @@
 /*
  * @Author: Jackie
  * @Date: 2023-07-24 16:34:03
- * @LastEditTime: 2023-07-24 17:07:20
+ * @LastEditTime: 2024-03-22 15:40:09
  * @LastEditors: Jackie
  * @Description: user pinia
  * @FilePath: /vue3-demo-pinia/src/store/user.js
@@ -31,7 +31,7 @@ export const useUserStore = defineStore(
     const userCount = computed(() => count);
 
     // 修改
-    const setName = (name) => (state.name = name);
+    const setName = (name) => (state.name = state.name + name);
     const setAge = (age) => (state.age += age);
     const addNum = () => (num.value += 1);
 
@@ -47,6 +47,7 @@ export const useUserStore = defineStore(
     };
   },
   {
+    // 数据持久化piniaPluginPersist
     persist: {
       enabled: true, // 开启缓存  默认会存储在本地localstorage
       storage: sessionStorage, // 缓存使用方式
@@ -58,5 +59,12 @@ export const useUserStore = defineStore(
       //   }
       // ]
     }
+
+    // 数据持久化piniaPluginPersistedstate
+    // persist: {
+    //   key: 'userStore',
+    //   storage: sessionStorage // 缓存使用方式
+    //   // paths: ['state.name', 'num'] // 需要缓存键
+    // }
   }
 );
